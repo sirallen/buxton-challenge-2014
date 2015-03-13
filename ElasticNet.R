@@ -1,5 +1,5 @@
 setwd('C:/Users/Allen/Dropbox/activities/Buxton Challenge')
-da = read.csv('CTL Data - Mod.csv',header=T, sep=',')
+da = read.csv('CTL Data - Mod.csv')
 dim(da)
 ### Choose "URBAN" or "SUBRURBAN" (all caps)
 MODEL = "URBAN"
@@ -7,7 +7,7 @@ MODEL = "URBAN"
 #################
 ### Scrubbing ###
 #################
-desc = read.csv('Descriptions - Mod.csv',header=T,sep=',')
+desc = read.csv('Descriptions - Mod.csv')
 desc = subset(desc, !(Variable %in% c('NONCALI_RES_GRAV','NONCALI_WRK_GRAV','Region_AvgSales')))
 temp0 = da[,as.character(desc$Variable[which(desc$Not_Zero==1)])]
 da[,as.character(desc$Variable[which(desc$Not_Zero==1)])][temp0==0] = NA

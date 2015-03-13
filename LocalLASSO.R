@@ -3,9 +3,9 @@ MODEL = "URBAN"
 KERNEL = T
 k = 5
 if (MODEL=="URBAN"){
-  X = read.csv('da-Urban.csv',header=T,sep=',')
+  X = read.csv('da-Urban.csv')
 } else {
-  X = read.csv('da-Suburban.csv',header=T,sep=',')
+  X = read.csv('da-Suburban.csv')
 }
 rownames(X) = X$X; X=X[,-1]
 if (KERNEL){
@@ -26,7 +26,7 @@ if (KERNEL){
   gamma = gamma/sum(gamma) # sum to 1
   w = 0
   for (i in 1:length(bhatt.mats)){
-    bhatt.mat = read.csv(bhatt.mats[i],header=T,sep=',')
+    bhatt.mat = read.csv(bhatt.mats[i],row.names=1)
     w = w + gamma[i]*exp(-bhatt.mat)
   }
   rm(bhatt.mat)
@@ -35,7 +35,7 @@ w = as.matrix(w)
 diag(w) = pmax(diag(w),1)
 w = pmax(1-4*(1-w), 0) # Stretch distances!
 w = data.frame(w,row.names=1:314)
-w = subset(w, subset=(rownames(w) %in% rownames(X)), select=(colnames(w) %in% paste0("V",rownames(X))))
+w = subset(w, subset=(rownames(w) %in% rownames(X)), select=(colnames(w) %in% paste0("X",rownames(X))))
 
 ####################################
 ### Subsetting and Standardizing ###
