@@ -6,7 +6,7 @@ These R files contain statistical models that I built for a predictive analytics
 
 ElasticNet.R fits an Elastic Net (R package `glmnet`), which performs shrinkage and variable selection via L1-L2 regularization to generate a multiple regression model. I also wrote code for scrubbing, since the data set had missing and mislabeled values in some places, and implemented cross-validation to optimize predictive accuracy.
 
-LocalLASSO.R implements a semiparametric model which fits a weighted multiple regression (LASSO) for each existing store, with the weights given by a composite kernel capturing demographic similarities between pairs of stores. The sales revenue prediction for each potential store is a local average of the predictions given by the models associated with the k-most-similar existing stores, again using the kernel as a similarity metric.
+LocalLASSO.R implements a semiparametric model which fits a weighted multiple regression (LASSO) for each existing store, with the weights given by a composite kernel capturing demographic similarities between pairs of stores. (The intuition is that the set of variables most important for revenue may depend on a store location's demographics.) The sales revenue prediction for each potential store is a local average of the predictions given by the models associated with the k-most-similar existing stores, again using the kernel as a similarity metric.
 
 ComputeBhatt.R outputs five .csv files, each containing a matrix of the Bhattacharyya distances between pairs of stores for one of the five demographic categories (Age, Income, Household Size, Family Size, and Education). These are combined to form the composite kernel in LocalLASSO.R.
 
