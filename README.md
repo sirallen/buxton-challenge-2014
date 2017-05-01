@@ -1,6 +1,6 @@
 # buxton-challenge-2014
 
-These R files contain statistical models that I built for a predictive analytics challenge in November 2014, sponsored by Buxton and the Wharton Customer Analytics Initiative. The challenge was to predict the sales revenue of potential new store locations of a fast food chain, given a data set with sales and over 700 features for 300 existing locations. Notably, this is a "p > N" setting which breaks standard regression models. I used statistical learning methods to handle this issue robustly, while also satisfying model interpretability requirements in the competition rules.
+These R files contain statistical models that I built for a predictive analytics challenge in November 2014, sponsored by Buxton and the Wharton Customer Analytics Initiative. The challenge was to predict the sales revenue of potential new store locations of a fast food chain, given a data set with sales and over 700 features for 300 existing locations. Notably, this is a "p > N" setting which breaks standard regression models. I used statistical learning methods to handle this issue robustly, while also satisfying model interpretability requirements in the competition rules. My team and I communicated our methods and recommendations to a "non-technical" panel of judges who roleplayed the chain's executive leadership.
 
 **Description of Files**
 
