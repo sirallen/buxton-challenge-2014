@@ -4,7 +4,7 @@ These R files contain statistical models that I built for a predictive analytics
 
 **Description of Files**
 
-ElasticNet.R contains my implementation of an Elastic Net (R package glmnet), which performs shrinkage and variable selection via L1-L2 regularization to generate a multiple regression model. I also wrote code for scrubbing, since the data set had missing and mislabeled values in some places, and implemented cross-validation to optimize predictive accuracy.
+ElasticNet.R contains my implementation of an Elastic Net (R package `glmnet`), which performs shrinkage and variable selection via L1-L2 regularization to generate a multiple regression model. I also wrote code for scrubbing, since the data set had missing and mislabeled values in some places, and implemented cross-validation to optimize predictive accuracy.
 
 LocalLASSO.R contains my implementation of local regression, which builds a weighted multiple regression (LASSO) for each existing store, with the weights given by a composite kernel capturing demographic similarities between pairs of stores. The sales revenue prediction for each potential store is a weighted average of the predictions given by the models associated with the k-most-similar existing stores, again using the kernel as a similarity metric.
 
