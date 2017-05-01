@@ -1,6 +1,8 @@
 # buxton-challenge-2014
 
-These R files contain statistical models that I built for a predictive analytics challenge in November 2014, sponsored by Buxton and the Wharton Customer Analytics Initiative. The challenge was to predict the sales revenue of potential new store locations of a fast food chain, given a data set with sales and over 700 features for 300 existing locations.
+These R files contain statistical models that I built for a predictive analytics challenge in November 2014, sponsored by Buxton and the Wharton Customer Analytics Initiative. The challenge was to predict the sales revenue of potential new store locations of a fast food chain, given a data set with sales and over 700 features for 300 existing locations. Notably, this is a "p > N" setting which breaks standard regression models. I used statistical learning methods to handle this issue robustly, while also satisfying model interpretability requirements in the competition rules.
+
+**Description of Files**
 
 ElasticNet.R contains my implementation of an Elastic Net (R package glmnet), which performs shrinkage and variable selection via L1-L2 regularization to generate a multiple regression model. I also wrote code for scrubbing, since the data set had missing and mislabeled values in some places, and implemented cross-validation to optimize predictive accuracy.
 
